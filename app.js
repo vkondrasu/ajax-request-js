@@ -20,7 +20,7 @@
             let htmlContent = '';
 
             if (images && images.results) {
-                let random_num = Math.floor(Math.rnadom() * images.results.length);
+                let random_num = Math.floor(Math.random() * images.results.length);
                 let firstImage;
                 if (images.results[random_num]) {
                     firstImage = images.results[random_num];
