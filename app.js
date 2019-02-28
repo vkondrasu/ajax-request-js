@@ -19,8 +19,14 @@
 
             let htmlContent = '';
 
-            if (images && images.results && images.results[0]) {
-                let firstImage = images.results[0];
+            if (images && images.results) {
+                let random_num = Math.floor(Math.rnadom() * images.results.length);
+                let firstImage;
+                if (images.results[random_num]) {
+                    firstImage = images.results[random_num];
+                } else if (images.results[0]) {
+                    firstImage = images.results[0];
+                }
                 htmlContent = `<figure> 
 			<img src="${firstImage.urls.regular}" alt="${searchedForText}">
 			<figcaption>${searchedForText} by ${firstImage.user.name}</figcaption>
